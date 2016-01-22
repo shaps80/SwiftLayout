@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SwiftLayout_Example', :exclusive => true do
+  pod "SwiftLayout", :path => "../"
+end
+
+target 'SwiftLayout_Tests', :exclusive => true do
+  pod "SwiftLayout", :path => "../"
+
+  
+end
