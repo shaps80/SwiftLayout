@@ -31,6 +31,9 @@
 		1F80ECEE28D5E8CDD9446D4F /* Pods_SwiftLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E4CC1F6E18CBE852856B06 /* Pods-SwiftLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Tests/Pods-SwiftLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		44743390FD2C8B4650DB66D1 /* Pods-SwiftLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Tests/Pods-SwiftLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5439B6271C52F4BF00B0D2D4 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		5439B6281C52F4BF00B0D2D4 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDefines.swift; sourceTree = "<group>"; };
 		57F5261FCD2E587CEFCE28F5 /* Pods-SwiftLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Example/Pods-SwiftLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +46,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		610847488B15E75BB38D0888 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		81D50A404C4EC65EA9168ADF /* SwiftLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftLayout.podspec; path = ../SwiftLayout.podspec; sourceTree = "<group>"; };
+		81D50A404C4EC65EA9168ADF /* SwiftLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = SwiftLayout.podspec; path = ../SwiftLayout.podspec; sourceTree = "<group>"; };
 		842F6539DB60528FE5B5031C /* Pods_SwiftLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD832719B49D1420A14DE521 /* Pods-SwiftLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Example/Pods-SwiftLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D662ACD35BF7B03417C2327F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -69,9 +72,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5439B6241C52F3FE00B0D2D4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5439B6271C52F4BF00B0D2D4 /* Constraint.swift */,
+				5439B6281C52F4BF00B0D2D4 /* Layout.swift */,
+				5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */,
+			);
+			name = Classes;
+			path = ../Pod/Classes;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				5439B6241C52F3FE00B0D2D4 /* Classes */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SwiftLayout */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -515,10 +530,6 @@
 			baseConfigurationReference = 32E4CC1F6E18CBE852856B06 /* Pods-SwiftLayout_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -536,10 +547,6 @@
 			baseConfigurationReference = 44743390FD2C8B4650DB66D1 /* Pods-SwiftLayout_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";

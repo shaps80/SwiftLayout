@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import SwiftLayout
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+      super.viewDidLoad()
+      
+      let view = UIView()
+      view.backgroundColor = UIColor.redColor()
+      self.view.addSubview(view)
+      
+      view.size(200, height: 100)
+      view.alignVertically(self.view)
+      view.pin(.Left, toEdge: .Left, ofView: self.view, margin: 20)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  
 }
 
