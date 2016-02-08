@@ -62,23 +62,23 @@ extension View {
   
   - returns: The constaints that were added to this view
   */
-  public func pin(edges: EdgeMask, toView view: View, margins: EdgeMargins) -> [NSLayoutConstraint] {
+  public func pin(edges: EdgeMask, toView view: View, relation: NSLayoutRelation = .Equal, margins: EdgeMargins, priority: LayoutPriority = 1000) -> [NSLayoutConstraint] {
     var constraints = [NSLayoutConstraint]()
     
     if edges.contains(.Top) {
-      constraints.append(pin(.Top, toEdge: .Top, ofView: view, margin: margins.top))
+      constraints.append(pin(.Top, toEdge: .Top, ofView: view, relation: relation, margin: margins.top, priority: priority))
     }
     
     if edges.contains(.Bottom) {
-      constraints.append(pin(.Bottom, toEdge: .Bottom, ofView: view, margin: margins.bottom))
+      constraints.append(pin(.Bottom, toEdge: .Bottom, ofView: view, relation: relation, margin: margins.bottom, priority: priority))
     }
     
     if edges.contains(.Left) {
-      constraints.append(pin(.Left, toEdge: .Left, ofView: view, margin: margins.left))
+      constraints.append(pin(.Left, toEdge: .Left, ofView: view, relation: relation, margin: margins.left, priority: priority))
     }
     
     if edges.contains(.Right) {
-      constraints.append(pin(.Right, toEdge: .Right, ofView: view, margin: margins.right))
+      constraints.append(pin(.Right, toEdge: .Right, ofView: view, relation: relation, margin: margins.right, priority: priority))
     }
     
     return constraints
@@ -95,13 +95,15 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func pin(edge: Edge, toEdge: Edge, ofView view: View, margin: CGFloat) -> NSLayoutConstraint {
+  public func pin(edge: Edge, toEdge: Edge, ofView view: View, relation: NSLayoutRelation = .Equal, margin: CGFloat, priority: LayoutPriority = 1000) -> NSLayoutConstraint {
     var constraint = Constraint(view: self)
     
     constraint.secondView = view
     constraint.firstAttribute = edgeAttribute(edge)
     constraint.secondAttribute = edgeAttribute(toEdge)
     constraint.constant = edge == .Right || toEdge == .Right || edge == .Bottom || toEdge == .Bottom ? -1 * margin : margin
+    constraint.relation = relation
+    constraint.priority = priority
     
     let layoutConstraint = constraint.constraint()
     NSLayoutConstraint.activateConstraints([layoutConstraint])
@@ -117,13 +119,14 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func center(axis: Axis, relativeTo view: View, offset: CGFloat) -> NSLayoutConstraint {
+  public func center(axis: Axis, relativeTo view: View, offset: CGFloat, priority: LayoutPriority = 1000) -> NSLayoutConstraint {
     var constraint = Constraint(view: self)
     
     constraint.secondView = view
     constraint.firstAttribute = centerAttribute(axis)
     constraint.secondAttribute = centerAttribute(axis)
     constraint.constant = offset
+    constraint.priority = priority
     
     let layoutConstraint = constraint.constraint()
     NSLayoutConstraint.activateConstraints([layoutConstraint])
@@ -139,11 +142,11 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func size(axis: Axis, ofViews views: [View], ratio: CGFloat) -> [NSLayoutConstraint] {
+  public func size(axis: Axis, ofViews views: [View], ratio: CGFloat, priority: LayoutPriority = 1000) -> [NSLayoutConstraint] {
     var constraints = [NSLayoutConstraint]()
     
     for view: View in views {
-      constraints.append(view.size(axis, relativeTo: axis, ofView: self, ratio: ratio))
+      constraints.append(view.size(axis, relativeTo: axis, ofView: self, ratio: ratio, priority: priority))
     }
     
     return constraints
@@ -158,13 +161,14 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func size(axis: Axis, relatedBy relation: NSLayoutRelation, size: CGFloat) -> NSLayoutConstraint {
+  public func size(axis: Axis, relatedBy relation: NSLayoutRelation, size: CGFloat, priority: LayoutPriority = 1000) -> NSLayoutConstraint {
     var constraint = Constraint(view: self)
     
     constraint.firstAttribute = sizeAttribute(axis)
     constraint.secondAttribute = sizeAttribute(axis)
     constraint.relation = relation
     constraint.constant = size
+    constraint.priority = priority
     
     let layoutConstraint = constraint.constraint()
     NSLayoutConstraint.activateConstraints([layoutConstraint])
@@ -181,13 +185,14 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func size(axis: Axis, relativeTo otherAxis: Axis, ofView view: View, ratio: CGFloat) -> NSLayoutConstraint {
+  public func size(axis: Axis, relativeTo otherAxis: Axis, ofView view: View, ratio: CGFloat, priority: LayoutPriority = 1000) -> NSLayoutConstraint {
     var constraint = Constraint(view: self)
     
     constraint.secondView = view
     constraint.firstAttribute = sizeAttribute(axis)
     constraint.secondAttribute = sizeAttribute(otherAxis)
     constraint.multiplier = ratio
+    constraint.priority = priority
     
     let layoutConstraint = constraint.constraint()
     NSLayoutConstraint.activateConstraints([layoutConstraint])
@@ -208,21 +213,28 @@ extension View {
    
    - returns: The constraint that was added
    */
-  public func size(width: CGFloat, height: CGFloat) -> [NSLayoutConstraint] {
-    let horizontal = size(.Horizontal, relatedBy: .Equal, size: width)
-    let vertical = size(.Vertical, relatedBy: .Equal, size: height)
+  public func size(width: CGFloat, height: CGFloat, relation: NSLayoutRelation = .Equal, priority: LayoutPriority = 1000) -> [NSLayoutConstraint] {
+    let horizontal = size(.Horizontal, relatedBy: relation, size: width, priority: priority)
+    let vertical = size(.Vertical, relatedBy: relation, size: height, priority: priority)
     return [horizontal, vertical]
   }
   
-  /**
-  Aligns the top edge of this view to the top of the specified view
-  
-  - parameter view: The reference view to align to
-  
-  - returns: The constraint that was added
-  */
-  public func alignTop(view: View) -> NSLayoutConstraint {
-    return pin(.Top, toEdge: .Top, ofView: view, margin: frame.minY)
+  public func alignEdges(edges: EdgeMask, toView: View) {
+    if edges.contains(.Left) {
+      alignLeft(toView)
+    }
+    
+    if edges.contains(.Right) {
+      alignRight(toView)
+    }
+    
+    if edges.contains(.Top) {
+      alignTop(toView)
+    }
+    
+    if edges.contains(.Bottom) {
+      alignBottom(toView)
+    }
   }
   
   /**
@@ -232,8 +244,8 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func alignLeft(view: View) -> NSLayoutConstraint {
-    return pin(.Left, toEdge: .Left, ofView: view, margin: frame.minX)
+  public func alignTop(toView: View) -> NSLayoutConstraint {
+    return pin(.Top, toEdge: .Top, ofView: toView, margin: frame.minY)
   }
   
   /**
@@ -243,8 +255,8 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func alignBottom(view: View) -> NSLayoutConstraint {
-    return pin(.Bottom, toEdge: .Bottom, ofView: view, margin: view.bounds.maxY - frame.maxY)
+  public func alignLeft(toView: View) -> NSLayoutConstraint {
+    return pin(.Left, toEdge: .Left, ofView: toView, margin: frame.minX)
   }
   
   /**
@@ -254,8 +266,19 @@ extension View {
   
   - returns: The constraint that was added
   */
-  public func alignRight(view: View) -> NSLayoutConstraint {
-    return pin(.Right, toEdge: .Right, ofView: view, margin: view.bounds.maxX - frame.maxX)
+  public func alignBottom(toView: View) -> NSLayoutConstraint {
+    return pin(.Bottom, toEdge: .Bottom, ofView: toView, margin: toView.bounds.maxY - frame.maxY)
+  }
+  
+  /**
+  Aligns the top edge of this view to the top of the specified view
+  
+  - parameter view: The reference view to align to
+  
+  - returns: The constraint that was added
+  */
+  public func alignRight(toView: View) -> NSLayoutConstraint {
+    return pin(.Right, toEdge: .Right, ofView: toView, margin: toView.bounds.maxX - frame.maxX)
   }
 
   /**
@@ -265,8 +288,8 @@ extension View {
    
    - returns: The constraint that was added
    */
-  public func alignHorizontally(view: View) -> NSLayoutConstraint {
-    return center(.Horizontal, relativeTo: view, offset: 0)
+  public func alignHorizontally(toView: View) -> NSLayoutConstraint {
+    return center(.Horizontal, relativeTo: toView, offset: 0)
   }
   
   /**
@@ -276,8 +299,8 @@ extension View {
    
    - returns: The constraint that was added
    */
-  public func alignVertically(view: View) -> NSLayoutConstraint {
-    return center(.Vertical, relativeTo: view, offset: 0)
+  public func alignVertically(toView: View) -> NSLayoutConstraint {
+    return center(.Vertical, relativeTo: toView, offset: 0)
   }
   
 }

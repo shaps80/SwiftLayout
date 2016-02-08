@@ -129,7 +129,7 @@ public struct EdgeMargins {
   
   - returns: An EdgeMargins instance with its edges defined
   */
-  init(top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat) {
+  public init(top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat) {
     self.top = top
     self.left = left
     self.bottom = bottom
