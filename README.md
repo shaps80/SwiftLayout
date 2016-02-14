@@ -1,3 +1,5 @@
+<img src="assets/logo.png">
+
 # SwiftLayout
 
 [![Version](https://img.shields.io/cocoapods/v/SwiftLayout.svg?style=flat)](http://cocoapods.org/pods/SwiftLayout)
@@ -50,3 +52,8 @@ Shaps Mohsenin, shapsuk@me.com
 ## License
 
 SwiftLayout is available under the MIT license. See the LICENSE file for more info.
+
+
+## Attributes
+
+Icon: Cluster by Thomas Helbig from the Noun Project
