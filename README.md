@@ -1,4 +1,4 @@
-<img src="assets/logo.png">
+<img src="assets/logo.png" width="128" height="128">
 
 # SwiftLayout
 
