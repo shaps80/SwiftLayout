@@ -31,6 +31,11 @@
   public typealias LayoutPriority = UILayoutPriority
 #endif
 
+public let LayoutPriorityRequired: LayoutPriority = 1000 // A required constraint.  Do not exceed this.
+public let LayoutPriorityDefaultHigh: LayoutPriority = 750 // This is the priority level with which a button resists compressing its content.
+public let LayoutPriorityDefaultLow: LayoutPriority = 250 // This is the priority level at which a button hugs its contents horizontally.
+
+
 
 /**
 *  The classes included in this file extend NSLayoutConstraints, provide Swift implementations and cross-platform support for iOS, OSX, Watch and Apple TV
@@ -234,8 +239,19 @@ public struct Constraint: ConstraintDefinition {
     }
   }
   
-  public unowned var firstView: View
-  public weak var secondView: View?
+  public unowned var firstView: View {
+    didSet {
+      precondition(firstView.superview != nil, "The first view MUST be inserted into a superview before constraints can be applied")
+    }
+  }
+  
+  public weak var secondView: View? {
+    didSet {
+      if let view = secondView {
+        precondition(view.superview != nil, "The second view MUST be inserted into a superview before constraints can be applied")
+      }
+    }
+  }
   
   private weak var _constraint: NSLayoutConstraint?
   
@@ -249,11 +265,6 @@ public struct Constraint: ConstraintDefinition {
     self.priority = 250
     
     view.translatesAutoresizingMaskIntoConstraints = false
-    
-    guard view.superview != nil else {
-      print("The view MUST be inserted into a superview before constraints can be applied")
-      return
-    }
   }
   
   public mutating func constraint() -> NSLayoutConstraint {

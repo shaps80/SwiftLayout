@@ -18,7 +18,7 @@ class ViewController: UIViewController {
       view.backgroundColor = UIColor.redColor()
       self.view.addSubview(view)
       
-      view.size(200, height: 100)
+      view.size(width: 200, height: 100)
       view.alignVertically(self.view)
       view.pin(.Left, toEdge: .Left, ofView: self.view, margin: 20)
     }
