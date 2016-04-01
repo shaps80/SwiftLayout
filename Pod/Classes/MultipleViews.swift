@@ -6,12 +6,6 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-#if os(iOS)
-  import UIKit
-#else
-  import AppKit
-#endif
-
 extension View {
   
   /**
