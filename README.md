@@ -20,13 +20,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      let view = UIView()
-      view.backgroundColor = UIColor.redColor()
-      self.view.addSubview(view)
-      
-      view.size(200, height: 100)
-      view.alignVertically(self.view)
-      view.pin(.Left, toEdge: .Left, ofView: self.view, margin: 20)
+      let views = [ addView(), addView(), addView() ]
+
+      UIView.distribute(views, inView: view, alongAxis: .Vertical)
+      UIView.size(width: 100, height: 50, ofViews: views)
+      UIView.alignHorizontally(ofViews: views, toView: view)
+
+      let label = UILabel()
+      view.addSubview(label)
+      label.pin(.Left, toEdge: .Right, toView: view, margin: 15)
     }
   
 }

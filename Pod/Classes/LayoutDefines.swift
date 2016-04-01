@@ -1,5 +1,5 @@
 /*
-  Copyright © 2015 Francesco Petrungaro. All rights reserved.
+  Copyright © 2015 Shaps Mohsenin. All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are met:
@@ -77,14 +77,26 @@ public struct EdgeMask: OptionSetType {
   /// Defines a right edge
   public static var Right: EdgeMask  { return EdgeMask(rawValue: 1 << 3) }
   
+  /// Defines a top and left edge
+  public static var TopLeft: EdgeMask { return [.Top, .Left] }
+  
+  /// Defines a top and right edge
+  public static var TopRight: EdgeMask { return [.Top, .Right] }
+  
+  /// Defines a bottom and left edge
+  public static var BottomLeft: EdgeMask { return [.Bottom, .Left] }
+  
+  /// Defines a bottom and right edge
+  public static var BottomRight: EdgeMask { return [.Bottom, .Right] }
+  
   /// Defines a left and right edge
-  public static var LeftAndRight: EdgeMask  { return Left.union(.Right) }
+  public static var LeftAndRight: EdgeMask  { return [.Left, .Right] }
   
   /// Defines a top and bottom edge
-  public static var TopAndBottom: EdgeMask { return Top.union(.Bottom) }
+  public static var TopAndBottom: EdgeMask { return [.Top, .Bottom] }
   
   /// Defines all edges
-  public static var All: EdgeMask { return Left.union(.Right).union(.Top).union(.Bottom) }
+  public static var All: EdgeMask { return [.Left, .Right, .Top, .Bottom] }
 }
 
 /**
@@ -180,13 +192,13 @@ Converts an Edge to its associated edge attribute
 public func edgeAttribute(edge: Edge) -> NSLayoutAttribute {
   switch edge {
   case .Top:
-    return .Top
+    return .TopMargin
   case .Left:
-    return .Left
+    return .LeadingMargin
   case .Bottom:
-    return .Bottom
+    return .BottomMargin
   case .Right:
-    return .Right
+    return .TrailingMargin
   }
 }
 

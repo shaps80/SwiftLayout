@@ -1,5 +1,5 @@
 /*
-  Copyright © 2015 Francesco Petrungaro. All rights reserved.
+  Copyright © 2015 Shaps Mohsenin. All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions are met:
@@ -245,13 +245,7 @@ public struct Constraint: ConstraintDefinition {
     }
   }
   
-  public weak var secondView: View? {
-    didSet {
-      if let view = secondView {
-        precondition(view.superview != nil, "The second view MUST be inserted into a superview before constraints can be applied")
-      }
-    }
-  }
+  public weak var secondView: View?
   
   private weak var _constraint: NSLayoutConstraint?
   

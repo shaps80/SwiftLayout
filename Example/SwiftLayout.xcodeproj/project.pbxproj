@@ -32,8 +32,9 @@
 		32E4CC1F6E18CBE852856B06 /* Pods-SwiftLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Tests/Pods-SwiftLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		44743390FD2C8B4650DB66D1 /* Pods-SwiftLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Tests/Pods-SwiftLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5439B6271C52F4BF00B0D2D4 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
-		5439B6281C52F4BF00B0D2D4 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		5439B6281C52F4BF00B0D2D4 /* SingleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleView.swift; sourceTree = "<group>"; };
 		5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDefines.swift; sourceTree = "<group>"; };
+		5465A1CC1CAEC07100D629C3 /* MultipleViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleViews.swift; sourceTree = "<group>"; };
 		57F5261FCD2E587CEFCE28F5 /* Pods-SwiftLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Example/Pods-SwiftLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				5439B6271C52F4BF00B0D2D4 /* Constraint.swift */,
-				5439B6281C52F4BF00B0D2D4 /* Layout.swift */,
+				5439B6281C52F4BF00B0D2D4 /* SingleView.swift */,
+				5465A1CC1CAEC07100D629C3 /* MultipleViews.swift */,
 				5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */,
 			);
 			name = Classes;

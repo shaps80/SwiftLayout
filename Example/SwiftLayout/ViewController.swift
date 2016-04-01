@@ -10,18 +10,23 @@ import UIKit
 import SwiftLayout
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      let view = UIView()
-      view.backgroundColor = UIColor.redColor()
-      self.view.addSubview(view)
-      
-      view.size(width: 200, height: 100)
-      view.alignVertically(self.view)
-      view.pin(.Left, toEdge: .Left, ofView: self.view, margin: 20)
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let views = [ addView(), addView(), addView() ]
+    
+    UIView.distribute(views, inView: view, alongAxis: .Vertical)
+    UIView.size(width: 100, height: 50, ofViews: views)
+    UIView.alignHorizontally(ofViews: views, toView: view)
+  }
+  
+  func addView() -> UIView {
+    let view = UIView()
+    view.backgroundColor = UIColor.redColor()
+    self.view.addSubview(view)
+    return view
+  }
   
 }
 

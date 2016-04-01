@@ -1,5 +1,5 @@
 PODS:
-  - SwiftLayout (1.0)
+  - SwiftLayout (1.2)
 
 DEPENDENCIES:
   - SwiftLayout (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SwiftLayout: 628a545c29e6dea630489e9ebd2063fb81e22252
+  SwiftLayout: 9293c8cfeaffcd5822c46591bdeff7c42526e77a
 
 COCOAPODS: 0.39.0
