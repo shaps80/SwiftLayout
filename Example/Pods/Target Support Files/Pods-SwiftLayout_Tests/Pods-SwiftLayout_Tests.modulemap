@@ -1,6 +1,0 @@
-framework module Pods_SwiftLayout_Tests {
-  umbrella header "Pods-SwiftLayout_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

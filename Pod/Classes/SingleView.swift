@@ -23,12 +23,6 @@
   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#if os(iOS)
-  import UIKit
-#else
-  import AppKit
-#endif
-
 
 // MARK: - Extends UI/NS View to provide better support for programmatic constraints
 extension View {
