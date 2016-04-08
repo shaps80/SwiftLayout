@@ -192,13 +192,13 @@ Converts an Edge to its associated edge attribute
 public func edgeAttribute(edge: Edge) -> NSLayoutAttribute {
   switch edge {
   case .Top:
-    return .TopMargin
+    return .Top
   case .Left:
-    return .LeadingMargin
+    return .Left
   case .Bottom:
-    return .BottomMargin
+    return .Bottom
   case .Right:
-    return .TrailingMargin
+    return .Right
   }
 }
 

@@ -95,7 +95,7 @@ extension View {
     constraint.secondView = view
     constraint.firstAttribute = edgeAttribute(edge)
     constraint.secondAttribute = edgeAttribute(toEdge)
-    constraint.constant = edge == .Right || toEdge == .Right || edge == .Bottom || toEdge == .Bottom ? -1 * margin : margin
+    constraint.constant = (edge == .Right && toEdge == .Left) || (edge == .Bottom && toEdge == .Top) ? -1 * margin : margin
     constraint.relation = relation
     constraint.priority = priority
     
