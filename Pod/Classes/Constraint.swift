@@ -109,54 +109,6 @@ extension View {
     return constraints
   }
   
-  /**
-  Returns all constraints for this view that match the specified traits
-  
-  - parameter trait: The traits to lookup
-  
-  - returns: An array of constraints. If no constraints exist, an empty array is returned. This method never returns nil
-  */
-  public func constraints(for trait: ConstraintsTraitMask) -> [NSLayoutConstraint] {
-    var constraints = [NSLayoutConstraint]()
-    
-    for constraint in self.constraints {
-      if constraint.trait == trait {
-        constraints.append(constraint)
-      }
-    }
-    
-    if let superviewConstraints = self.superview?.constraints {
-      for constraint in superviewConstraints {
-        if constraint.firstItem as? View != self && constraint.secondItem as? View != self {
-          continue
-        }
-        
-        if trait.contains(constraint.trait) {
-          constraints.append(constraint)
-        }
-      }
-    }
-    
-    return constraints
-  }
-  
-  /**
-  Returns true if at least one constraint with the specified trait exists
-  
-  - parameter trait: The trait to test
-  
-  - returns: True if a constrait exists, false otherwise
-  */
-  public func contains(trait: ConstraintsTraitMask) -> Bool {
-    var traits = ConstraintsTraitMask.None
-    
-    for constraint in constraints(for: trait) {
-      traits.insert(constraint.trait)
-    }
-    
-    return traits.contains(trait)
-  }
-  
 }
 
 

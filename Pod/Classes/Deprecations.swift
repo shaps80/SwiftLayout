@@ -23,6 +23,15 @@ public func edgeAttribute(edge: Edge) -> NSLayoutAttribute {
   return edgeAttribute(for: edge)
 }
 
+@available(*, unavailable, deprecated: 2.0.0)
+extension ConstraintDefinition { }
+
+@available(*, unavailable, deprecated: 2.0.0)
+extension ConstraintsTraitMask { }
+
+@available(*, unavailable, deprecated: 2.0.0)
+extension Constraint { }
+
 extension View {
   
   // Multiple View
@@ -169,15 +178,35 @@ extension View {
   }
   
   // Single View
-  
-  @available(*, unavailable, renamed: "constraints(for:)")
-  public func constraintsForTrait(trait: ConstraintsTraitMask) -> [NSLayoutConstraint] {
-    return constraints(for: trait)
+
+  @available(*, unavailable, deprecated: 2.0.0)
+  public func constraints(for trait: ConstraintsTraitMask) -> [NSLayoutConstraint] {
+    var constraints = [NSLayoutConstraint]()
+    
+    for constraint in self.constraints {
+      if constraint.trait == trait {
+        constraints.append(constraint)
+      }
+    }
+    
+    if let superviewConstraints = self.superview?.constraints {
+      for constraint in superviewConstraints {
+        if constraint.firstItem as? View != self && constraint.secondItem as? View != self {
+          continue
+        }
+        
+        if trait.contains(constraint.trait) {
+          constraints.append(constraint)
+        }
+      }
+    }
+    
+    return constraints
   }
   
-  @available(*, unavailable, renamed: "contains(trait:)")
-  public func containsTraits(trait: ConstraintsTraitMask) -> Bool {
-    return contains(trait: trait)
+  @available(*, unavailable, deprecated: 2.0.0)
+  public func contains(trait: ConstraintsTraitMask) -> Bool {
+    fatalError("This has been removed!")
   }
   
   @available(*, unavailable, message: "Use pin(edge:to:of:) instead")

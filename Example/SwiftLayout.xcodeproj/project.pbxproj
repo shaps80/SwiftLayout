@@ -83,12 +83,8 @@
 			children = (
 				5439B6271C52F4BF00B0D2D4 /* Constraint.swift */,
 				54846E781D1974DB0063CF04 /* Extensions.swift */,
-				5439B6281C52F4BF00B0D2D4 /* SingleView+Pin.swift */,
-				54846E741D1974C90063CF04 /* SingleView+Align.swift */,
-				54846E761D1974D00063CF04 /* SingleView+Size.swift */,
-				54846E701D196D610063CF04 /* MultipleViews+Pin.swift */,
-				54846E721D196D6A0063CF04 /* MultipleViews+Align.swift */,
-				54846E6E1D196D460063CF04 /* MultipleViews+Size.swift */,
+				54846E7B1D19755E0063CF04 /* Single View */,
+				54846E7C1D1975660063CF04 /* Multiple View */,
 				5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */,
 				54492F341D1949F30086E79C /* Deprecations.swift */,
 			);
@@ -106,6 +102,26 @@
 				5465A1DD1CAED41000D629C3 /* Info.plist */,
 			);
 			path = "SwiftLayout-OSX";
+			sourceTree = "<group>";
+		};
+		54846E7B1D19755E0063CF04 /* Single View */ = {
+			isa = PBXGroup;
+			children = (
+				5439B6281C52F4BF00B0D2D4 /* SingleView+Pin.swift */,
+				54846E741D1974C90063CF04 /* SingleView+Align.swift */,
+				54846E761D1974D00063CF04 /* SingleView+Size.swift */,
+			);
+			name = "Single View";
+			sourceTree = "<group>";
+		};
+		54846E7C1D1975660063CF04 /* Multiple View */ = {
+			isa = PBXGroup;
+			children = (
+				54846E701D196D610063CF04 /* MultipleViews+Pin.swift */,
+				54846E721D196D6A0063CF04 /* MultipleViews+Align.swift */,
+				54846E6E1D196D460063CF04 /* MultipleViews+Size.swift */,
+			);
+			name = "Multiple View";
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -441,6 +457,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = "SwiftLayout-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -459,6 +476,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = "SwiftLayout-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -557,6 +575,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = SwiftLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -571,6 +590,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = SwiftLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

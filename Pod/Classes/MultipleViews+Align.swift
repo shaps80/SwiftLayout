@@ -21,7 +21,7 @@ extension Array where Element: View {
    
    - returns: The applied constraints
    */
-  public func align(axis: Axis, to view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
+  @discardableResult public func align(axis: Axis, to view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
     var constraints = [NSLayoutConstraint]()
     forEach { constraints.append($0.align(axis: axis, to: view, offset: offset, priority: priority)) }
     return constraints
@@ -37,7 +37,7 @@ extension Array where Element: View {
    
    - returns: The constraints that were added
    */
-  public func distribute(along axis: Axis, in view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
+  @discardableResult public func distribute(along axis: Axis, in view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
     var constraints = [NSLayoutConstraint]()
     
     for (index, view) in enumerated() {

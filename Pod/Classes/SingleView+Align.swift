@@ -19,7 +19,7 @@ extension View {
    
    - returns: The constraint that was added
    */
-  public func align(axis: Axis, to view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> NSLayoutConstraint {
+  @discardableResult public func align(axis: Axis, to view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> NSLayoutConstraint {
     var constraint = Constraint(view: self)
     
     constraint.secondView = view
