@@ -27,26 +27,6 @@
 // MARK: - Extends UI/NS View to provide better support for programmatic constraints
 extension View {
   
-  
-  /**
-  Resests all constraints for this view (similar to Xcode)
-  */
-  public func resetConstraints() {
-    removeConstraints(constraints)
-  }
-  
-  /**
-  Resets all constraints for this views subviews (similar to Xcode)
-  */
-  public func resetSubViewConstraints() {
-    for constraint: NSLayoutConstraint in self.constraints {
-      let item = constraint.firstItem as? View
-      if item != self {
-        removeConstraint(constraint)
-      }
-    }
-  }
-  
   /**
   Pins the edges of 2 associated views
   
@@ -103,96 +83,7 @@ constraints.append(pin(edge: .left, to: .left, of: view, relation: relation, mar
     NSLayoutConstraint.activate([layoutConstraint])
     return layoutConstraint
   }
-  
-  /**
-  Aligns this views center to another view
-  
-  - parameter axis:   The axis to align
-  - parameter view:   The second view to align to
-  - parameter offset: The offset to apply to this alignment
-  
-  - returns: The constraint that was added
-  */
-  public func align(axis: Axis, to view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> NSLayoutConstraint {
-    var constraint = Constraint(view: self)
-    
-    constraint.secondView = view
-    constraint.firstAttribute = centerAttribute(for: axis)
-    constraint.secondAttribute = centerAttribute(for: axis)
-    constraint.constant = offset
-    constraint.priority = priority
-    
-    let layoutConstraint = constraint.constraint()
-    NSLayoutConstraint.activate([layoutConstraint])
-    return layoutConstraint
-  }
 
-  /**
-  Sizes this view
-  
-  - parameter axis:     The axis to size
-  - parameter relation: The relation for this sizing, equal, greaterThanOrEqual, lessThanOrEqual
-  - parameter size:     The size to set
-  
-  - returns: The constraint that was added
-  */
-  public func size(axis: Axis, relation: NSLayoutRelation, size: CGFloat, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> NSLayoutConstraint {
-    var constraint = Constraint(view: self)
-    
-    constraint.firstAttribute = sizeAttribute(for: axis)
-    constraint.secondAttribute = sizeAttribute(for: axis)
-    constraint.relation = relation
-    constraint.constant = size
-    constraint.priority = priority
-    
-    let layoutConstraint = constraint.constraint()
-    NSLayoutConstraint.activate([layoutConstraint])
-    return layoutConstraint
-  }
-  
-  /**
-  Sizes this view's axis relative to another view axis. Note: The axis for each view doesn't have to be the same
-  
-  - parameter axis:      The axis to size
-  - parameter otherAxis: The other axis to use for sizing
-  - parameter view:      The second view to reference
-  - parameter ratio:     The ratio to apply to this sizing. (e.g. 0.5 would size this view by 50% of the second view's edge)
-  
-  - returns: The constraint that was added
-  */
-  public func size(axis: Axis, to otherAxis: Axis, of view: View, ratio: CGFloat = 1, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> NSLayoutConstraint {
-    var constraint = Constraint(view: self)
-    
-    constraint.secondView = view
-    constraint.firstAttribute = sizeAttribute(for: axis)
-    constraint.secondAttribute = sizeAttribute(for: otherAxis)
-    constraint.multiplier = ratio
-    constraint.priority = priority
-    
-    let layoutConstraint = constraint.constraint()
-    NSLayoutConstraint.activate([layoutConstraint])
-    return layoutConstraint
-  }
-  
-}
-
-
-// MARK: - Extends UI/NS View with some additional convenience methods
-extension View {
-  
-  /**
-   Sizes the view to the specified width and height
-   
-   - parameter width:  The width
-   - parameter height: The height
-   
-   - returns: The constraint that was added
-   */
-  public func size(width width: CGFloat, height: CGFloat, relation: NSLayoutRelation = .equal, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
-    let horizontal = size(axis: .horizontal, relation: relation, size: width, priority: priority)
-    let vertical = size(axis: .vertical, relation: relation, size: height, priority: priority)
-    return [horizontal, vertical]
-  }
   
   public func pin(edges: EdgeMask, to view: View) -> [NSLayoutConstraint] {
     var constraints = [NSLayoutConstraint]()

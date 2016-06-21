@@ -28,7 +28,7 @@
 		4948FF567C9747B95E098552 /* Pods-SwiftLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Example/Pods-SwiftLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		510859B83B8A9BAAAEB43A96 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5439B6271C52F4BF00B0D2D4 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
-		5439B6281C52F4BF00B0D2D4 /* SingleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleView.swift; sourceTree = "<group>"; };
+		5439B6281C52F4BF00B0D2D4 /* SingleView+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleView+Pin.swift"; sourceTree = "<group>"; };
 		5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDefines.swift; sourceTree = "<group>"; };
 		54492F341D1949F30086E79C /* Deprecations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deprecations.swift; sourceTree = "<group>"; };
 		5465A1D21CAED41000D629C3 /* SwiftLayout-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftLayout-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +40,9 @@
 		54846E6E1D196D460063CF04 /* MultipleViews+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleViews+Size.swift"; sourceTree = "<group>"; };
 		54846E701D196D610063CF04 /* MultipleViews+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleViews+Pin.swift"; sourceTree = "<group>"; };
 		54846E721D196D6A0063CF04 /* MultipleViews+Align.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleViews+Align.swift"; sourceTree = "<group>"; };
+		54846E741D1974C90063CF04 /* SingleView+Align.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleView+Align.swift"; sourceTree = "<group>"; };
+		54846E761D1974D00063CF04 /* SingleView+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleView+Size.swift"; sourceTree = "<group>"; };
+		54846E781D1974DB0063CF04 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		54D48D1B1CAED55100265CD8 /* SwiftLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLayout.framework; path = "Pods/../build/Debug-iphoneos/SwiftLayout.framework"; sourceTree = "<group>"; };
 		54D48D1F1CAED5A100265CD8 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				5439B6271C52F4BF00B0D2D4 /* Constraint.swift */,
-				5439B6281C52F4BF00B0D2D4 /* SingleView.swift */,
+				54846E781D1974DB0063CF04 /* Extensions.swift */,
+				5439B6281C52F4BF00B0D2D4 /* SingleView+Pin.swift */,
+				54846E741D1974C90063CF04 /* SingleView+Align.swift */,
+				54846E761D1974D00063CF04 /* SingleView+Size.swift */,
 				54846E701D196D610063CF04 /* MultipleViews+Pin.swift */,
 				54846E721D196D6A0063CF04 /* MultipleViews+Align.swift */,
 				54846E6E1D196D460063CF04 /* MultipleViews+Size.swift */,
