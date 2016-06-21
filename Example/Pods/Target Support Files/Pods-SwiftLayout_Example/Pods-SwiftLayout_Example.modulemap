@@ -1,0 +1,6 @@
+framework module Pods_SwiftLayout_Example {
+  umbrella header "Pods-SwiftLayout_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
