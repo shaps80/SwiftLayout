@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftLayout"
-  s.version          = "1.4.0"
+  s.version          = "2.0.0"
   s.summary          = "A Swift library for programmatically dealing with AutoLayout"
   s.homepage         = "https://github.com/shaps80/SwiftLayout"
   s.license          = 'MIT'
