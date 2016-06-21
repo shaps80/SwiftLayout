@@ -6,6 +6,12 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftLayout.svg?style=flat)](http://cocoapods.org/pods/SwiftLayout)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftLayout.svg?style=flat)](http://cocoapods.org/pods/SwiftLayout)
 
+#### Note
+> In order to use the Swift 3.0 version add the following to your Podfile
+> `pod 'SwiftLayout', :git => 'https://github.com/shaps80/SwiftLayout.git', :branch => 'Swift3.0'`
+
+--- 
+
 Often we have to use AutoLayout in our apps. In fact sometimes, we can't even use Interface Builder. Which means we need to add these programmatically.
 
 I had previously done this manually, even occassionally used a 3rd party lib/pod. There are some great libs out there, but I wanted to build my own. Both for my own understanding and also to provide a cleaner interface that made programmatic AutoLayout easy.
