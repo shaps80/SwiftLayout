@@ -31,13 +31,15 @@
 		5439B6281C52F4BF00B0D2D4 /* SingleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleView.swift; sourceTree = "<group>"; };
 		5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDefines.swift; sourceTree = "<group>"; };
 		54492F341D1949F30086E79C /* Deprecations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deprecations.swift; sourceTree = "<group>"; };
-		5465A1CC1CAEC07100D629C3 /* MultipleViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleViews.swift; sourceTree = "<group>"; };
 		5465A1D21CAED41000D629C3 /* SwiftLayout-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftLayout-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5465A1D41CAED41000D629C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5465A1D61CAED41000D629C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5465A1D81CAED41000D629C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5465A1DB1CAED41000D629C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5465A1DD1CAED41000D629C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54846E6E1D196D460063CF04 /* MultipleViews+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleViews+Size.swift"; sourceTree = "<group>"; };
+		54846E701D196D610063CF04 /* MultipleViews+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleViews+Pin.swift"; sourceTree = "<group>"; };
+		54846E721D196D6A0063CF04 /* MultipleViews+Align.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultipleViews+Align.swift"; sourceTree = "<group>"; };
 		54D48D1B1CAED55100265CD8 /* SwiftLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLayout.framework; path = "Pods/../build/Debug-iphoneos/SwiftLayout.framework"; sourceTree = "<group>"; };
 		54D48D1F1CAED5A100265CD8 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SwiftLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +80,9 @@
 			children = (
 				5439B6271C52F4BF00B0D2D4 /* Constraint.swift */,
 				5439B6281C52F4BF00B0D2D4 /* SingleView.swift */,
-				5465A1CC1CAEC07100D629C3 /* MultipleViews.swift */,
+				54846E701D196D610063CF04 /* MultipleViews+Pin.swift */,
+				54846E721D196D6A0063CF04 /* MultipleViews+Align.swift */,
+				54846E6E1D196D460063CF04 /* MultipleViews+Size.swift */,
 				5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */,
 				54492F341D1949F30086E79C /* Deprecations.swift */,
 			);
@@ -425,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDC94C9F869F9728EC287085 /* Pods-SwiftLayout-OSX.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -443,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C889BE404E24E1B1A293BBB /* Pods-SwiftLayout-OSX.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";

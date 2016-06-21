@@ -198,88 +198,22 @@ extension View {
     var constraints = [NSLayoutConstraint]()
     
     if edges.contains(.left) {
-      constraints.append(pin(leftTo: view))
+      constraints.append(pin(edge: .left, to: .left, of: view))
     }
     
     if edges.contains(.right) {
-      constraints.append(pin(rightTo: view))
+      constraints.append(pin(edge: .right, to: .right, of: view))
     }
     
     if edges.contains(.top) {
-      constraints.append(pin(topTo: view))
+      constraints.append(pin(edge: .top, to: .top, of: view))
     }
     
     if edges.contains(.bottom) {
-      constraints.append(pin(bottomTo: view))
+      constraints.append(pin(edge: .bottom, to: .bottom, of: view))
     }
     
     return constraints
-  }
-  
-  /**
-  Pins the top edge of this view to the top of the specified view
-  
-  - parameter view: The reference view to pin to
-  
-  - returns: The constraint that was added
-  */
-  public func pin(topTo view: View) -> NSLayoutConstraint {
-    return pin(edge: .top, to: .top, of: view, margin: frame.minY)
-  }
-  
-  /**
-  Pins the left edge of this view to the left of the specified view
-  
-  - parameter view: The reference view to pin to
-  
-  - returns: The constraint that was added
-  */
-  public func pin(leftTo view: View) -> NSLayoutConstraint {
-    return pin(edge: .left, to: .left, of: view, margin: frame.minX)
-  }
-  
-  /**
-  Pins the bottom edge of this view to the bottom of the specified view
-  
-  - parameter view: The reference view to pin to
-  
-  - returns: The constraint that was added
-  */
-  public func pin(bottomTo view: View) -> NSLayoutConstraint {
-    return pin(edge: .bottom, to: .bottom, of: view, margin: view.bounds.maxY - frame.maxY)
-  }
-  
-  /**
-  Pins the right edge of this view to the right of the specified view
-  
-  - parameter view: The reference view to pin to
-  
-  - returns: The constraint that was added
-  */
-  public func pin(rightTo view: View) -> NSLayoutConstraint {
-    return pin(edge: .right, to: .right, of: view, margin: view.bounds.maxX - frame.maxX)
-  }
-
-  /**
-   Aligns the center vertically to the specified view
-   
-   - parameter view: The reference view to align to
-   
-   - returns: The constraint that was added
-   */
-  public func align(horizontallyTo view: View) -> NSLayoutConstraint {
-    return align(axis: .horizontal, to: view, offset: 0)
-  }
-  
-  /**
-   Aligns the center vertically to the specified view
-   
-   - parameter view: The reference view to align to
-   
-   - returns: The constraint that was added
-   */
-  public func align(verticallyTo view: View) -> NSLayoutConstraint {
-    return align(axis: .vertical, to: view, offset: 0)
   }
   
 }

@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-//import SwiftLayout
+import SwiftLayout
 
 class ViewController: NSViewController {
   
@@ -26,7 +26,7 @@ class ViewController: NSViewController {
   func addView() -> NSView {
     let view = NSView()
     view.wantsLayer = true
-    view.layer?.backgroundColor = NSColor.redColor().CGColor
+    view.layer?.backgroundColor = NSColor.red().cgColor
     self.view.addSubview(view)
     return view
   }
