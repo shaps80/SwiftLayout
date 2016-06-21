@@ -15,13 +15,14 @@ class ViewController: NSViewController {
     super.viewDidLoad()
     
     let views = [ addView(), addView(), addView() ]
-    let con = views.distribute(along: .vertical, in: view)
-    con.activateConstraints(activate: true)
+    var constraints = [NSLayoutConstraint]()
     
-    views.size(width: 100, height: 50)
-    views.align(axis: .horizontal, to: view)
+    constraints.append(contentsOf: views.distribute(along: .vertical, in: view))
     
-    print(views)
+    constraints.append(contentsOf: views.size(width: 100, height: 50))
+    constraints.append(contentsOf: views.align(axis: .horizontal, to: view))
+    
+    constraints.activateConstraints(activate: true)
   }
   
   func addView() -> NSView {
