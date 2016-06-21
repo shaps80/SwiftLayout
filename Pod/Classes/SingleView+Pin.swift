@@ -79,9 +79,7 @@ constraints.append(pin(edge: .left, to: .left, of: view, relation: relation, mar
     constraint.relation = relation
     constraint.priority = priority
     
-    let layoutConstraint = constraint.constraint()
-    NSLayoutConstraint.activate([layoutConstraint])
-    return layoutConstraint
+    return constraint.constraint()
   }
 
   

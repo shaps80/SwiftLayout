@@ -15,10 +15,11 @@ class ViewController: NSViewController {
     super.viewDidLoad()
     
     let views = [ addView(), addView(), addView() ]
+    let con = views.distribute(along: .vertical, in: view)
+    con.activateConstraints(activate: true)
     
-//    NSView.distribute(views, inView: view, alongAxis: .Vertical)
-//    NSView.size(width: 100, height: 50, ofViews: views)
-//    NSView.alignHorizontally(ofViews: views, toView: view)
+    views.size(width: 100, height: 50)
+    views.align(axis: .horizontal, to: view)
     
     print(views)
   }

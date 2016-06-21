@@ -31,8 +31,16 @@ extension View {
   
 }
 
+import ObjectiveC
+
+struct ArrayAssociation {
+  static var _active: UInt8 = 1
+}
+
 extension Array where Element: NSLayoutConstraint {
   
-  
+  public func activateConstraints(activate: Bool) {
+    forEach { $0.isActive = activate }
+  }
   
 }

@@ -55,34 +55,34 @@ public struct ConstraintsTraitMask: OptionSet {
   
   
   /// A top margin constraint is applied
-  public static var TopMargin: ConstraintsTraitMask   { return ConstraintsTraitMask(rawValue: 1 << 0) }
+  public static var topMargin: ConstraintsTraitMask   { return ConstraintsTraitMask(rawValue: 1 << 0) }
   
   /// A left margin constraint is applied
-  public static var LeftMargin: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 1) }
+  public static var leftMargin: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 1) }
   
   /// A right margin constraint is applied
-  public static var RightMargin: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 2) }
+  public static var rightMargin: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 2) }
   
   /// A bottom margin constraint is applied
-  public static var BottomMargin: ConstraintsTraitMask   { return ConstraintsTraitMask(rawValue: 1 << 3) }
+  public static var bottomMargin: ConstraintsTraitMask   { return ConstraintsTraitMask(rawValue: 1 << 3) }
   
   /// A horitzontal alignment constraint is applied
-  public static var HorizontalAlignment: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 4) }
+  public static var horizontalAlignment: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 4) }
   
   /// A vertical aligntment constraint is applied
-  public static var VerticalAlignment: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 5) }
+  public static var verticalAlignment: ConstraintsTraitMask  { return ConstraintsTraitMask(rawValue: 1 << 5) }
   
   /// A horizontal sizing constraint is applied
-  public static var HorizontalSizing: ConstraintsTraitMask { return ConstraintsTraitMask(rawValue: 1 << 6) }
+  public static var horizontalSizing: ConstraintsTraitMask { return ConstraintsTraitMask(rawValue: 1 << 6) }
   
   /// A vertical sizing constraint is applied
-  public static var VerticalSizing: ConstraintsTraitMask { return ConstraintsTraitMask(rawValue: 1 << 7) }
+  public static var verticalSizing: ConstraintsTraitMask { return ConstraintsTraitMask(rawValue: 1 << 7) }
   
   /// Horizontal margin constraints are applied (Left and Right)
-  public static var HorizontalMargins: ConstraintsTraitMask  { return LeftMargin.union(RightMargin) }
+  public static var horizontalMargins: ConstraintsTraitMask  { return [leftMargin, rightMargin] }
   
   /// Vertical margin constraints are applied (Top and Right)
-  public static var VerticalMargins: ConstraintsTraitMask { return TopMargin.union(BottomMargin) }
+  public static var verticalMargins: ConstraintsTraitMask { return [topMargin, bottomMargin] }
 }
 
 // MARK: - This extends UI/NS View to provide additional constraints support
@@ -148,16 +148,16 @@ extension ConstraintDefinition {
     let centerX = self.firstAttribute == .centerX
     let centerY = self.firstAttribute == .centerY
     
-    if width { return .HorizontalSizing }
-    if height { return .VerticalSizing }
+    if width { return .horizontalSizing }
+    if height { return .verticalSizing }
     
-    if centerX { return .HorizontalAlignment }
-    if centerY { return .VerticalAlignment }
+    if centerX { return .horizontalAlignment }
+    if centerY { return .verticalAlignment }
     
-    if left { return .LeftMargin }
-    if right { return .RightMargin }
-    if top { return .TopMargin }
-    if bottom { return .BottomMargin }
+    if left { return .leftMargin }
+    if right { return .rightMargin }
+    if top { return .topMargin }
+    if bottom { return .bottomMargin }
     
     return .None
   }
@@ -176,22 +176,6 @@ public struct Constraint: ConstraintDefinition {
   public internal(set) var relation: NSLayoutRelation
   public internal(set) var firstAttribute: NSLayoutAttribute
   public internal(set) var secondAttribute: NSLayoutAttribute
-  
-  private var _enabled = true
-  public var enabled: Bool {
-    get {
-      return self._enabled
-    }
-    set {
-      self._enabled = enabled
-      
-      if (self.enabled) {
-        NSLayoutConstraint.activate([self.constraint()])
-      } else {
-        NSLayoutConstraint.deactivate([self.constraint()])
-      }
-    }
-  }
   
   public unowned var firstView: View {
     didSet {

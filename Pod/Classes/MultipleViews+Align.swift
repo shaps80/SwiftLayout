@@ -54,7 +54,6 @@ extension Array where Element: View {
       constraints.append(layoutConstraint)
     }
     
-    NSLayoutConstraint.activate(constraints)
     return constraints
   }
   

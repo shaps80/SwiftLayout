@@ -28,9 +28,7 @@ extension View {
     constraint.constant = offset
     constraint.priority = priority
     
-    let layoutConstraint = constraint.constraint()
-    NSLayoutConstraint.activate([layoutConstraint])
-    return layoutConstraint
+    return constraint.constraint()
   }
   
 }
