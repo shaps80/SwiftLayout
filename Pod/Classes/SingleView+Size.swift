@@ -28,7 +28,9 @@ extension View {
     constraint.constant = size
     constraint.priority = priority
     
-    return constraint.constraint()
+    let layout = constraint.constraint()
+    layout.isActive = true
+    return layout
   }
   
   /**
@@ -50,7 +52,9 @@ extension View {
     constraint.multiplier = ratio
     constraint.priority = priority
     
-    return constraint.constraint()
+    let layout = constraint.constraint()
+    layout.isActive = true
+    return layout
   }
   
   /**

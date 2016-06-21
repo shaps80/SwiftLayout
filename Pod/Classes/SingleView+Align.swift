@@ -28,7 +28,9 @@ extension View {
     constraint.constant = offset
     constraint.priority = priority
     
-    return constraint.constraint()
+    let layout = constraint.constraint()
+    layout.isActive = true
+    return layout
   }
   
 }

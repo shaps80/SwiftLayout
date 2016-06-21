@@ -83,10 +83,10 @@
 			children = (
 				5439B6271C52F4BF00B0D2D4 /* Constraint.swift */,
 				54846E781D1974DB0063CF04 /* Extensions.swift */,
-				54846E7B1D19755E0063CF04 /* Single View */,
-				54846E7C1D1975660063CF04 /* Multiple View */,
 				5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */,
 				54492F341D1949F30086E79C /* Deprecations.swift */,
+				54846E7B1D19755E0063CF04 /* Single View */,
+				54846E7C1D1975660063CF04 /* Multiple View */,
 			);
 			name = Classes;
 			path = ../Pod/Classes;
@@ -476,6 +476,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = "SwiftLayout-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -483,7 +484,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.snippex.osx.SwiftLayout-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};
@@ -581,6 +582,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -597,6 +599,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

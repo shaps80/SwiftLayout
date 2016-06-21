@@ -39,6 +39,9 @@ struct ArrayAssociation {
 
 extension Array where Element: NSLayoutConstraint {
   
+  /**
+   Activates or deactivates all constraints in the array regardless of their current state
+   */
   public func activateConstraints(activate: Bool) {
     forEach { $0.isActive = activate }
   }

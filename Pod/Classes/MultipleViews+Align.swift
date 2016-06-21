@@ -40,8 +40,8 @@ extension Array where Element: View {
   @discardableResult public func distribute(along axis: Axis, in view: View, offset: CGFloat = 0, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
     var constraints = [NSLayoutConstraint]()
     
-    for (index, view) in enumerated() {
-      var constraint = Constraint(view: view)
+    for (index, innerView) in enumerated() {
+      var constraint = Constraint(view: innerView)
       
       constraint.secondView = view
       constraint.firstAttribute = centerAttribute(for: axis)
@@ -50,10 +50,10 @@ extension Array where Element: View {
       constraint.multiplier = (CGFloat(index) + 1) / (CGFloat(count) + 1)
       constraint.priority = priority
       
-      let layoutConstraint = constraint.constraint()
-      constraints.append(layoutConstraint)
+      constraints.append(constraint.constraint())
     }
     
+    constraints.activateConstraints(activate: true)
     return constraints
   }
   

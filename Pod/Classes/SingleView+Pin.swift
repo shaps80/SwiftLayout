@@ -79,7 +79,9 @@ constraints.append(pin(edge: .left, to: .left, of: view, relation: relation, mar
     constraint.relation = relation
     constraint.priority = priority
     
-    return constraint.constraint()
+    let layout = constraint.constraint()
+    layout.isActive = true
+    return layout
   }
 
   
