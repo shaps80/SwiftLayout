@@ -7,36 +7,38 @@
 //
 
 import UIKit
-import SwiftLayout
+//import SwiftLayout
 
 class ViewController: UIViewController {
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    let first = addView()
-    
-    let views = [ first, addView(), addView() ]
-    
-    UIView.distribute(views, inView: view, alongAxis: .Vertical)
-    UIView.size(width: 100, height: 50, ofViews: views)
-    UIView.alignHorizontally(ofViews: views, toView: view)
-    
-    let test = UIView()
-    view.addSubview(test)
-    
-    test.pin(.Left, toEdge: .Right, toView: first, margin: 10)
-    test.alignVertically(first)
-    test.size(width: 100, height: 100)
-    test.backgroundColor = UIColor.grayColor()
-  }
-  
-  func addView() -> UIView {
-    let view = UIView()
-    view.backgroundColor = UIColor.redColor()
-    self.view.addSubview(view)
-    return view
-  }
+//  override func viewDidLoad() {
+//    super.viewDidLoad()
+//    
+//    let first = addView()
+//    
+//    let views = [ first, addView(), addView() ]
+//    
+//    UIView.distribute(views, inView: view, alongAxis: .Vertical)
+//    UIView.size(width: 100, height: 50, ofViews: views)
+//    UIView.alignHorizontally(ofViews: views, toView: view)
+//    
+//    let test = UIView()
+//    view.addSubview(test)
+//    
+//    test.test()
+//    
+//    test.pin(.Left, toEdge: .Right, toView: first, margin: 10)
+//    test.alignVertically(first)
+//    test.size(width: 100, height: 100)
+//    test.backgroundColor = UIColor.grayColor()
+//  }
+//  
+//  func addView() -> UIView {
+//    let view = UIView()
+//    view.backgroundColor = UIColor.redColor()
+//    self.view.addSubview(view)
+//    return view
+//  }
   
 }
 

@@ -1,4 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod "SwiftLayout", :path => "../"
+target 'SwiftLayout_Example' do
+  pod "SwiftLayout", :path => "../"
+end
+
+target 'SwiftLayout-OSX' do
+  pod "SwiftLayout", :path => "../"
+end
