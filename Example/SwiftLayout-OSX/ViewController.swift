@@ -24,7 +24,7 @@ class ViewController: NSViewController {
   func addView() -> NSView {
     let view = NSView()
     view.wantsLayer = true
-    view.layer?.backgroundColor = NSColor.red().cgColor
+    view.layer?.backgroundColor = NSColor.red.cgColor
     self.view.addSubview(view)
     return view
   }

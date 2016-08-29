@@ -65,7 +65,7 @@ extension View {
    
    - returns: The constraint that was added
    */
-  @discardableResult public func size(width width: CGFloat, height: CGFloat, relation: NSLayoutRelation = .equal, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
+  @discardableResult public func size(width: CGFloat, height: CGFloat, relation: NSLayoutRelation = .equal, priority: LayoutPriority = LayoutPriorityDefaultHigh) -> [NSLayoutConstraint] {
     let horizontal = size(axis: .horizontal, relation: relation, size: width, priority: priority)
     let vertical = size(axis: .vertical, relation: relation, size: height, priority: priority)
     return [horizontal, vertical]

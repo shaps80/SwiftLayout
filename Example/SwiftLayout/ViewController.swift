@@ -28,12 +28,12 @@ class ViewController: UIViewController {
     test.pin(edge: .left, to: .right, of: first, margin: 10)
     test.align(axis: .vertical, to: first)
     test.size(width: 20, height: 100)
-    test.backgroundColor = UIColor.gray()
+    test.backgroundColor = UIColor.gray
   }
   
   func addView() -> UIView {
     let view = UIView()
-    view.backgroundColor = UIColor.red()
+    view.backgroundColor = UIColor.red
     self.view.addSubview(view)
     return view
   }

@@ -185,7 +185,7 @@ public struct Constraint: ConstraintDefinition {
   
   public weak var secondView: View?
   
-  private weak var _constraint: NSLayoutConstraint?
+  fileprivate weak var _constraint: NSLayoutConstraint?
   
   public init(view: View) {
     self.firstView = view
