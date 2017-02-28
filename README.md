@@ -7,16 +7,23 @@
 [![Platform](https://img.shields.io/cocoapods/p/SwiftLayout.svg?style=flat)](http://cocoapods.org/pods/SwiftLayout)
 
 #### Note
-> In order to use the Swift 3.0 version add the following to your Podfile
-> `pod 'SwiftLayout', :git => 'https://github.com/shaps80/SwiftLayout.git', :branch => 'Swift3.0'`
+By default Swift Layout is now using Swift 3.0. You can install either 3.0 or 2.2 version as follows:
 
---- 
+Swift 3.0  
+`pod 'SwiftLayout'`  
+
+Swift 2.3 - **Not Supported**
+
+Swift 2.2  
+`pod 'SwiftLayout', '1.3.1'`
+
+---
 
 Often we have to use AutoLayout in our apps. In fact sometimes, we can't even use Interface Builder. Which means we need to add these programmatically.
 
 I had previously done this manually, even occassionally used a 3rd party lib/pod. There are some great libs out there, but I wanted to build my own. Both for my own understanding and also to provide a cleaner interface that made programmatic AutoLayout easy.
 
-_Introducing SwiftLayout_
+__Introducing SwiftLayout__
 
 ```swift
 import SwiftLayout
@@ -25,18 +32,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
       super.viewDidLoad()
-      
-      let views = [ addView(), addView(), addView() ]
 
-      UIView.distribute(views, inView: view, alongAxis: .Vertical)
-      UIView.size(width: 100, height: 50, ofViews: views)
-      UIView.alignHorizontally(ofViews: views, toView: view)
+      let views = [ addView(), addView(), addView() ]
+	  views.distribute(along: .vertical, in: view)
+	  views.size(width: 100, height: 50)
+	  views.align(axis: .horizontal, in: view)
 
       let label = UILabel()
       view.addSubview(label)
-      label.pin(.Left, toEdge: .Right, toView: view, margin: 15)
+      label.pin(edge: .Left, to: .Right, of: view, margin: 15)
     }
-  
+
 }
 ```
 

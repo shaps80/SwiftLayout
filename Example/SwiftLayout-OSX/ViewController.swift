@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-//import SwiftLayout
+import SwiftLayout
 
 class ViewController: NSViewController {
   
@@ -16,17 +16,15 @@ class ViewController: NSViewController {
     
     let views = [ addView(), addView(), addView() ]
     
-//    NSView.distribute(views, inView: view, alongAxis: .Vertical)
-//    NSView.size(width: 100, height: 50, ofViews: views)
-//    NSView.alignHorizontally(ofViews: views, toView: view)
-    
-    print(views)
+    views.size(width: 100, height: 50)
+    views.align(axis: .horizontal, to: view)
+    views.distribute(along: .vertical, in: view)
   }
   
   func addView() -> NSView {
     let view = NSView()
     view.wantsLayer = true
-    view.layer?.backgroundColor = NSColor.redColor().CGColor
+    view.layer?.backgroundColor = NSColor.red.cgColor
     self.view.addSubview(view)
     return view
   }
