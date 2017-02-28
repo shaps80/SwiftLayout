@@ -208,12 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5465A1E01CAED41000D629C3 /* Build configuration list for PBXNativeTarget "SwiftLayout-OSX" */;
 			buildPhases = (
-				8337C82A03512AD9B1A6EE73 /* 📦 Check Pods Manifest.lock */,
+				8337C82A03512AD9B1A6EE73 /* [CP] Check Pods Manifest.lock */,
 				5465A1CE1CAED41000D629C3 /* Sources */,
 				5465A1CF1CAED41000D629C3 /* Frameworks */,
 				5465A1D01CAED41000D629C3 /* Resources */,
-				9919B568E1DB026E4834863F /* 📦 Embed Pods Frameworks */,
-				2507F1819C12A757D91754DE /* 📦 Copy Pods Resources */,
+				9919B568E1DB026E4834863F /* [CP] Embed Pods Frameworks */,
+				2507F1819C12A757D91754DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,12 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SwiftLayout_Example" */;
 			buildPhases = (
-				D5EEC4CA55AA0FB1C6A99CEC /* 📦 Check Pods Manifest.lock */,
+				D5EEC4CA55AA0FB1C6A99CEC /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				86477040CF0960D259346B08 /* 📦 Embed Pods Frameworks */,
-				C366CCD8DBB1B8334A920335 /* 📦 Copy Pods Resources */,
+				86477040CF0960D259346B08 /* [CP] Embed Pods Frameworks */,
+				C366CCD8DBB1B8334A920335 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,14 +307,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2507F1819C12A757D91754DE /* 📦 Copy Pods Resources */ = {
+		2507F1819C12A757D91754DE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,29 +322,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftLayout-OSX/Pods-SwiftLayout-OSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8337C82A03512AD9B1A6EE73 /* 📦 Check Pods Manifest.lock */ = {
+		8337C82A03512AD9B1A6EE73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		86477040CF0960D259346B08 /* 📦 Embed Pods Frameworks */ = {
+		86477040CF0960D259346B08 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,14 +352,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftLayout_Example/Pods-SwiftLayout_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9919B568E1DB026E4834863F /* 📦 Embed Pods Frameworks */ = {
+		9919B568E1DB026E4834863F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,14 +367,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftLayout-OSX/Pods-SwiftLayout-OSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C366CCD8DBB1B8334A920335 /* 📦 Copy Pods Resources */ = {
+		C366CCD8DBB1B8334A920335 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,19 +382,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftLayout_Example/Pods-SwiftLayout_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D5EEC4CA55AA0FB1C6A99CEC /* 📦 Check Pods Manifest.lock */ = {
+		D5EEC4CA55AA0FB1C6A99CEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -452,7 +452,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDC94C9F869F9728EC287085 /* Pods-SwiftLayout-OSX.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -472,7 +471,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C889BE404E24E1B1A293BBB /* Pods-SwiftLayout-OSX.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -577,7 +575,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1300CFE5715B42859CA67E15 /* Pods-SwiftLayout_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = SwiftLayout/Info.plist;
@@ -593,7 +590,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4948FF567C9747B95E098552 /* Pods-SwiftLayout_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = SwiftLayout/Info.plist;
