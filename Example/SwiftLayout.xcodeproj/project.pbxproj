@@ -27,7 +27,7 @@
 		4210BB764ED8E45DD711C2B6 /* Pods_SwiftLayout_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftLayout_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948FF567C9747B95E098552 /* Pods-SwiftLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLayout_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftLayout_Example/Pods-SwiftLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		510859B83B8A9BAAAEB43A96 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5439B6271C52F4BF00B0D2D4 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		5439B6271C52F4BF00B0D2D4 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; tabWidth = 2; };
 		5439B6281C52F4BF00B0D2D4 /* SingleView+Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleView+Pin.swift"; sourceTree = "<group>"; };
 		5439B6291C52F4BF00B0D2D4 /* LayoutDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDefines.swift; sourceTree = "<group>"; };
 		54492F341D1949F30086E79C /* Deprecations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deprecations.swift; sourceTree = "<group>"; };
