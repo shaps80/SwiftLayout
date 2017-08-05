@@ -1,10 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
+inhibit_all_warnings!
 
 target 'SwiftLayout_Example' do
+  platform :ios, '8.3'
   pod "SwiftLayout", :path => "../"
 end
 
 target 'SwiftLayout-OSX' do
+  platform :osx, '10.10'
   pod "SwiftLayout", :path => "../"
 end

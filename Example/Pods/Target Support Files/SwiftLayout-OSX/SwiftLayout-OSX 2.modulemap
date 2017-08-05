@@ -1,6 +1,0 @@
-framework module SwiftLayout {
-  umbrella header "SwiftLayout-OSX-umbrella.h"
-
-  export *
-  module * { export * }
-}

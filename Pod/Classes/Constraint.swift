@@ -31,9 +31,9 @@
   public typealias LayoutPriority = UILayoutPriority
 #endif
 
-public let LayoutPriorityRequired: LayoutPriority = 1000 // A required constraint.  Do not exceed this.
-public let LayoutPriorityDefaultHigh: LayoutPriority = 750 // This is the priority level with which a button resists compressing its content.
-public let LayoutPriorityDefaultLow: LayoutPriority = 250 // This is the priority level at which a button hugs its contents horizontally.
+public let LayoutPriorityRequired: LayoutPriority = LayoutPriority(rawValue: 1000) // A required constraint.  Do not exceed this.
+public let LayoutPriorityDefaultHigh: LayoutPriority = LayoutPriority(rawValue: 750) // This is the priority level with which a button resists compressing its content.
+public let LayoutPriorityDefaultLow: LayoutPriority = LayoutPriority(rawValue: 250) // This is the priority level at which a button hugs its contents horizontally.
 
 
 
@@ -194,7 +194,7 @@ public struct Constraint: ConstraintDefinition {
     self.constant = 0
     self.multiplier = 1
     self.relation = .equal
-    self.priority = 250
+    self.priority = LayoutPriority(rawValue: 250)
     
     view.translatesAutoresizingMaskIntoConstraints = false
   }
