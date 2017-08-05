@@ -9,7 +9,7 @@
 import Foundation
 
 @available(*, unavailable, renamed: "sizeAttribute(for:)")
-public func sizeAttribute(_ axis: Axis) -> NSLayoutConstraint.Attribute {
+public func sizeAttribute(_ axis: Axis) -> LayoutAttribute {
     return sizeAttribute(for: axis)
 }
 
