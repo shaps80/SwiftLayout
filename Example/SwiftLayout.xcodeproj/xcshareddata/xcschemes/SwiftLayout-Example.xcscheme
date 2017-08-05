@@ -23,14 +23,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "SwiftLayout_Tests.xctest"
-               BlueprintName = "SwiftLayout_Tests"
+               BlueprintIdentifier = "5465A1D11CAED41000D629C3"
+               BuildableName = "SwiftLayout-OSX.app"
+               BlueprintName = "SwiftLayout-OSX"
                ReferencedContainer = "container:SwiftLayout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,16 +43,6 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "SwiftLayout_Tests.xctest"
-               BlueprintName = "SwiftLayout_Tests"
-               ReferencedContainer = "container:SwiftLayout.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
